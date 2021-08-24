@@ -19,10 +19,6 @@ const PostList = ({ posts, getPostList, navigation }) => {
     getPostList();
   }, []);
 
-  const [showUserDetail, setShowUserDetail] = useState(false);
-  const [showPostDetail, setShowPostDetail] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
-
   getItemView = ({ title, userId, user }, index) => (
     <TouchableOpacity
       style={styles.itemView}
@@ -42,17 +38,13 @@ const PostList = ({ posts, getPostList, navigation }) => {
   return (
     <SafeAreaView style={styles.parent}>
       {posts.length === 0 ? <Loader /> : null}
-      {!showUserDetail && !showPostDetail ? (
-        <FlatList
-          keyExtractor={(item) => `${item.id}`}
-          data={posts}
-          initialNumToRender={20}
-          renderItem={({ item, index }) => getItemView(item, index)}
-          style={styles.list}
-        />
-      ) : null}
-      {showUserDetail ? <UserList user={posts[selectedIndex].user} /> : null}
-      {showPostDetail ? <PostDetail post={posts[selectedIndex]} /> : null}
+      <FlatList
+        keyExtractor={(item) => `${item.id}`}
+        data={posts}
+        initialNumToRender={20}
+        renderItem={({ item, index }) => getItemView(item, index)}
+        style={styles.list}
+      />
     </SafeAreaView>
   );
 };
