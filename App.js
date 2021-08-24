@@ -1,21 +1,60 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Actions, Router, Scene, Stack } from "react-native-router-flux";
+import PostDetail from "./src/modules/PostDetail/PostDetail";
+import PostList from "./src/modules/Posts/PostList";
+import UserList from "./src/modules/UserList/UserList";
+import { navigationBarBg } from "./src/util/Colors";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Router>
+      <Stack
+        key="rootStack"
+        navigationBarStyle={{ backgroundColor: navigationBarBg }}
+      >
+        <Scene
+          key="posts"
+          initial
+          component={PostList}
+          title="Posts"
+          headerMode="none"
+        />
+        <Scene
+          key="user"
+          component={UserList}
+          title="User"
+          renderLeftButton={
+            <Text onPress={() => Actions.pop()} style={styles.back}>
+              {"<"}
+            </Text>
+          }
+        />
+        <Scene
+          key="postDetail"
+          component={PostDetail}
+          title="Post"
+          renderLeftButton={
+            <Text onPress={() => Actions.pop()} style={styles.back}>
+              {"<"}
+            </Text>
+          }
+        />
+      </Stack>
+    </Router>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  back: {
+    marginStart: 10,
+    fontSize: 20,
   },
 });
