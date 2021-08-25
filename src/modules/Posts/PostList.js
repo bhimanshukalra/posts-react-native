@@ -1,28 +1,15 @@
-import {FlatList, SafeAreaView, Text, TouchableOpacity} from 'react-native';
+import {FlatList, SafeAreaView} from 'react-native';
 import React, {useEffect} from 'react';
 import * as actionCreator from './redux/actionCreators';
 import {connect} from 'react-redux';
 import {styles} from './Styles';
 import {Loader} from '../../util/Loader';
-import {Actions} from 'react-native-router-flux';
+import Post from './components/Post';
 
 const PostList = ({posts, getPostList, navigation}) => {
   useEffect(() => {
     getPostList();
   }, []);
-
-  const getItemView = ({title, userId, user}, index) => (
-    <TouchableOpacity
-      style={styles.itemView}
-      onPress={() => Actions.postDetail({post: posts[index]})}>
-      <Text style={[styles.itemPrimaryChild, styles.itemText]}>{title}</Text>
-      <Text
-        style={[styles.itemSecondaryChild, styles.itemText]}
-        onPress={() => Actions.user({user: posts[index].user})}>
-        - {user.username}
-      </Text>
-    </TouchableOpacity>
-  );
 
   return (
     <SafeAreaView style={styles.parent}>
@@ -31,7 +18,10 @@ const PostList = ({posts, getPostList, navigation}) => {
         keyExtractor={item => `${item.id}`}
         data={posts}
         initialNumToRender={20}
-        renderItem={({item, index}) => getItemView(item, index)}
+        // renderItem={({item, index}) => getItemView(item, index)}
+        renderItem={({item, index}) => (
+          <Post title={item.title} user={item.user} index={index} />
+        )}
         style={styles.list}
       />
     </SafeAreaView>
