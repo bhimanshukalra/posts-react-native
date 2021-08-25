@@ -9,3 +9,9 @@ Todo:
 - [x] Post List Screen
 - [x] User Detail Screen
 - [x] Post Detail Screen
+
+To run this app on local machine run the following commands on the termainal:
+
+1. npm i\
+2. npx pod-install\
+3. npm run ios\
