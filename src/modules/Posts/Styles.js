@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { primaryBg } from "../../util/Colors";
+import {StyleSheet} from 'react-native';
+import {primaryBg} from '../../util/Colors';
 
 export const styles = StyleSheet.create({
   parent: {
@@ -18,10 +18,17 @@ export const styles = StyleSheet.create({
     flex: 8,
   },
   itemSecondaryChild: {
-    flex: 2,
-    alignSelf: "flex-end",
+    alignSelf: 'flex-end',
+    flexWrap: 'wrap',
+    flex: 1,
   },
   itemText: {
     fontSize: 16,
+  },
+  authorWrapper: {
+    backgroundColor: 'rgb(167, 221, 107)',
+    width: '50%',
+    alignSelf: 'flex-end',
+    borderRadius: 10,
   },
 });

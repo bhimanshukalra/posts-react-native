@@ -1,10 +1,9 @@
-import { FlatList, SafeAreaView, Text, View } from "react-native";
-import { connect } from "react-redux";
-import React, { useEffect } from "react";
-import { styles } from "./Styles";
+import {SafeAreaView, Text, View} from 'react-native';
+import React from 'react';
+import {styles} from './Styles';
 
-const UserList = ({ user }) => {
-  getItemView = ({ username, name, email, website, company }) => {
+const UserDetail = ({user}) => {
+  const getItemView = ({username, name, email, website, company}) => {
     return (
       <View style={styles.itemView}>
         <Text style={styles.itemText}>Username: {username}</Text>
@@ -22,4 +21,4 @@ const UserList = ({ user }) => {
   return <SafeAreaView style={styles.parent}>{getItemView(user)}</SafeAreaView>;
 };
 
-export default UserList;
+export default UserDetail;

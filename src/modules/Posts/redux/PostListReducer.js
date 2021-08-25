@@ -1,4 +1,4 @@
-import * as actions from "./actions";
+import * as actions from './actions';
 
 const initialState = {
   posts: [],
@@ -12,12 +12,12 @@ const postListreducer = (state = initialState, action) => {
   return state;
 };
 
-getPostsAndUsers = (state, { action }) => {
-  const response = action.posts.map((post) => {
-    return { ...post, user: action.users[post.userId - 1] };
+const getPostsAndUsers = (state, {action}) => {
+  const response = action.posts.map(post => {
+    return {...post, user: action.users[post.userId - 1]};
   });
 
-  return { ...state, posts: response };
+  return {...state, posts: response};
 };
 
 export default postListreducer;

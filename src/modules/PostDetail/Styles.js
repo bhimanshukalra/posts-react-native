@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { primaryBg } from "../../util/Colors";
+import {StyleSheet} from 'react-native';
+import {primaryBg} from '../../util/Colors';
 
 export const styles = StyleSheet.create({
   parent: {
@@ -19,13 +19,13 @@ export const styles = StyleSheet.create({
     flex: 8,
   },
   itemSecondaryChild: {
-    alignSelf: "flex-end",
+    alignSelf: 'flex-end',
   },
   itemText: {
     fontSize: 16,
   },
   heading: {
-    fontWeight: "600",
+    fontWeight: '600',
   },
   listParent: {
     flex: 1,
