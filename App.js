@@ -1,53 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
-import {Router, Scene, Stack} from 'react-native-router-flux';
-import PostDetail from './src/modules/PostDetail/PostDetail';
-import PostList from './src/modules/Posts/PostList';
-import UserList from './src/modules/UserDetail/UserDetail';
-import {navigationBarBg} from './src/util/Colors';
+import {StyleSheet} from 'react-native';
 export default function App() {
   return (
-    <Router>
-      <Stack
-        key="rootStack"
-        navigationBarStyle={{backgroundColor: navigationBarBg}}>
-        <Scene
-          key="posts"
-          initial
-          component={PostList}
-          title="Posts"
-          headerMode="none"
-        />
-        <Scene
-          key="user"
-          component={UserList}
-          title="User"
-          renderLeftButton={
-            <Text style={styles.back}>
-              {'<-'}
-            </Text>
-          }
-        />
-        <Scene
-          key="postDetail"
-          component={PostDetail}
-          title="Post"
-          renderLeftButton={
-            <Text style={styles.back}>
-              {'<-'}
-            </Text>
-          }
-        />
-      </Stack>
-    </Router>
+    <View />
   );
 }
 
