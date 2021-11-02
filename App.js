@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
-import {Actions, Router, Scene, Stack} from 'react-native-router-flux';
+import {Router, Scene, Stack} from 'react-native-router-flux';
 import PostDetail from './src/modules/PostDetail/PostDetail';
 import PostList from './src/modules/Posts/PostList';
 import UserList from './src/modules/UserDetail/UserDetail';
