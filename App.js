@@ -31,7 +31,7 @@ export default function App() {
           component={UserList}
           title="User"
           renderLeftButton={
-            <Text onPress={() => Actions.pop()} style={styles.back}>
+            <Text onPress={} style={styles.back}>
               {'<-'}
             </Text>
           }
@@ -41,7 +41,7 @@ export default function App() {
           component={PostDetail}
           title="Post"
           renderLeftButton={
-            <Text onPress={() => Actions.pop()} style={styles.back}>
+            <Text onPress={} style={styles.back}>
               {'<-'}
             </Text>
           }
